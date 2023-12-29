@@ -4,11 +4,17 @@ import 'package:programming_club/core/theme/app_style.dart';
 import 'package:programming_club/core/utils/image_constant.dart';
 import 'package:programming_club/core/utils/size_utils.dart';
 
-class DrawerMenuDrawerItem extends StatelessWidget {
+class DrawerMenuDrawerItem extends StatefulWidget {
   const DrawerMenuDrawerItem({super.key});
 
   @override
+  State<DrawerMenuDrawerItem> createState() => _DrawerMenuDrawerItemState();
+}
+
+class _DrawerMenuDrawerItemState extends State<DrawerMenuDrawerItem> {
+  @override
   Widget build(BuildContext context) {
+    bool expanded = false;
     return Drawer(
       child: ListView(
         padding: getPadding(left: 0, top: 0),
@@ -65,7 +71,9 @@ class DrawerMenuDrawerItem extends StatelessWidget {
                 minRadius: 50,
                 backgroundImage: AssetImage(ImageConstant.imgProfilepicture),
               ),
-              onDetailsPressed: () {},
+              onDetailsPressed: () {
+                expanded = !expanded;
+              },
             ),
           ),
           // ListTile(
@@ -115,104 +123,104 @@ class DrawerMenuDrawerItem extends StatelessWidget {
           //     Navigator.pop(context);
           //   },
           // ),
-
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: Text(
-              'Settings',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+          if (expanded) ...<Widget>[
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: Text(
+                'Settings',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.help),
-            title: Text(
-              'Help',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: Text(
+                'Help',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.feedback),
-            title: Text(
-              'Feedback',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.feedback),
+              title: Text(
+                'Feedback',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.share),
-            title: Text(
-              'Share',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.share),
+              title: Text(
+                'Share',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.rate_review),
-            title: Text(
-              'Rate Us',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.rate_review),
+              title: Text(
+                'Rate Us',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.info),
-            title: Text(
-              'Terms and Conditions',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.info),
+              title: Text(
+                'Terms and Conditions',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-
-          ListTile(
-            leading: const Icon(Icons.privacy_tip),
-            title: Text(
-              'Privacy Policy',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.privacy_tip),
+              title: Text(
+                'Privacy Policy',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: Text(
-              'LogOut',
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.left,
-              style: AppStyle.txtPoppinsMedium18,
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: Text(
+                'LogOut',
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.left,
+                style: AppStyle.txtPoppinsMedium18,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          ],
           // Padding(
           //   padding: getPadding(top: 34),
           //   child: Divider(
@@ -274,9 +282,6 @@ class DrawerMenuDrawerItem extends StatelessWidget {
   }
 
   // onTapTxtAudio(BuildContext context) {
-  //   context.router.pushNamed('/explore');
-  // }
-
   onTapTxtReadingList(BuildContext context) {
     context.router.pushNamed('/interests');
   }
