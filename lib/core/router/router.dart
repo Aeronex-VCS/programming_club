@@ -67,5 +67,10 @@ class AppRouter extends $AppRouter {
       path: '/terms-and-conditions',
       initial: false,
     ),
+    AutoRoute(
+      page: ContestDetailsRoute.page,
+      path: '/contest-details',
+      initial: false,
+    ),
   ];
 }

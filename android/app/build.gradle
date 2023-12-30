@@ -98,8 +98,8 @@ android {
         }
         prod {
             dimension "default"
-            applicationIdSuffix ".prod"
-            versionNameSuffix "-prod"
+//            applicationIdSuffix ".prod"
+//            versionNameSuffix "-prod"
             resValue "string", "app_name", "Programming Club"
             manifestPlaceholders = [
                 appName: "Programming Club"

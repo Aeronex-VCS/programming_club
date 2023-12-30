@@ -7,7 +7,9 @@ class ImageConstant {
 
   static String imgCodechef = 'assets/images/img_codechef.ico';
 
-  static String imgLeetcode = 'assets/images/img_leetcode.svg';
+  static String imgLeetcode = 'assets/images/img_leetcode.png';
+
+  static String imgAllPlatforms = 'assets/images/img_all_platforms.png';
   // TODO: Add Github image to assets
   static String imgGithub = 'assets/images/img_github.png';
   // TODO: Add Hackerrank image to assets

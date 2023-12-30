@@ -15,3 +15,21 @@ extension DateTimeExtension on DateTime {
     return DateFormat(pattern, locale).format(this);
   }
 }
+
+String formatUnixTimestamp(int unixTimestamp) {
+  // Create a DateTime object from the Unix timestamp (in seconds)
+  DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(unixTimestamp * 1000);
+
+  // Format the DateTime object into a human-readable string
+  String formattedTime = '${dateTime.day}/${dateTime.month}/${dateTime.year}, '
+      '${_twoDigits(dateTime.hour)}:${_twoDigits(dateTime.minute)}:${_twoDigits(dateTime.second)}';
+
+  return formattedTime;
+}
+
+String _twoDigits(int n) {
+  if (n >= 10) {
+    return '$n';
+  }
+  return '0$n';
+}
